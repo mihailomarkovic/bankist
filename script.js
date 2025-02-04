@@ -66,10 +66,12 @@ const inputClosePin = document.querySelector('.form__input--pin');
 
 // FUNCTIONS
 
-const displayMovements = function (movements) {
+const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = '';
 
-  movements.forEach(function (mov, i) {
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+  movs.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
 
     const html = `
@@ -214,11 +216,17 @@ btnClose.addEventListener('click', function (e) {
   inputCloseUsername.value = inputClosePin.value = '';
 });
 
+let sorted = false;
+btnSort.addEventListener('click', function (e) {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
+});
 ///////////// TEST SECTION /////////////////
+/*
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const eurToUsd = 1.1;
-/*
-
+ 
 const movementsUSD = movements.map(mov => mov * eurToUsd);
 
 const movementsDescriptions = movements.map(
@@ -260,5 +268,8 @@ console.log(accounts);
 
 const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 console.log(account);
+
+movements.sort((a, b) => b - a);
+console.log(movements);
 */
 //////////////////////////////////
