@@ -1,4 +1,6 @@
-# Bankist App
+# [Bankist App 💰](https://bankist-app-mihailomarkovic.netlify.app/)
+
+![Picture of Bankist App website on a laptop.](readme-img.png)
 
 ## Introduction
 
@@ -41,6 +43,14 @@ Through this project, I gained hands-on experience with:
 - **JavaScript (ES6+)**: Core logic and functionalities.
 - **HTML & CSS**: UI structure and styling.
 - **Intl API**: Used for date and currency formatting.
+
+## Exploring the App
+
+If you want to explore the site, use the following accounts:
+
+- **Username**: js / **Password**: 1111
+
+- **Username**: jd / **Password**: 2222
 
 ## Closing Thoughts
 
